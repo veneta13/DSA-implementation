@@ -157,7 +157,7 @@ public:
 
     /// Check if the tree is empty
     /// Time complexity: O(1)
-    void empty() {
+    bool empty() {
         return root == nullptr;
     }
 
