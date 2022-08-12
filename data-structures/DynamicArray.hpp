@@ -1,6 +1,8 @@
 #ifndef DSA_IMPLEMENTATION_DYNAMICARRAY_HPP
 #define DSA_IMPLEMENTATION_DYNAMICARRAY_HPP
 
+#include <stdexcept>
+
 template<typename T>
 class DynamicArray {
     /// Currently allocated capacity
@@ -13,7 +15,7 @@ class DynamicArray {
     T* array;
 
     /// Clear all elements of the array
-    /// Time complexity: TODO
+    /// Time complexity: O(n)
     void clear() {
         delete[] array;
         array = nullptr;
@@ -44,7 +46,7 @@ class DynamicArray {
 public:
 
     /// Constructor with size parameter
-    /// Time complexity: //TODO
+    /// Time complexity: O(n)
     DynamicArray(int _capacity = 8) : capacity(_capacity), count(0) {
         if (_capacity < 1) {
             throw std::invalid_argument("Illegal initial size");
@@ -99,7 +101,7 @@ public:
 
 
     /// Destructor
-    /// Time complexity: TODO
+    /// Time complexity: O(n)
     ~DynamicArray() {
         clear();
     }
@@ -192,7 +194,7 @@ public:
     }
 
     /// Clear all elements
-    /// Time complexity: TODO
+    /// Time complexity: O(n)
     void clearAll() {
         clear();
     }
