@@ -155,7 +155,7 @@ public:
 
     /// Remove the first element of the list
     /// Time complexity: O(1)
-    void popFront(const T& element) {
+    T popFront(const T& element) {
         if (!first) {
             throw std::runtime_error("List is empty");
         }
@@ -164,10 +164,12 @@ public:
             return popBack();
         }
 
+        T value = first->value;
         Node* current = first;
         first = first->next;
         delete current;
         count--;
+        return value;
     }
 
     /// Check if list contains an element
