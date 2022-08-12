@@ -152,6 +152,7 @@ public:
     /// Time complexity: O(n)
     void clearAll() {
         clearSubtree(root);
+        root = nullptr;
     }
 
     /// Check if the tree is empty
