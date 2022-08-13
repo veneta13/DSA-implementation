@@ -4,6 +4,7 @@
 #include "data-structures/BinaryTree.hpp"
 #include "data-structures/BinarySearchTree.hpp"
 #include "data-structures/Stack.hpp"
+#include "data-structures/Queue.hpp"
 
 int main() {
     return 0;
