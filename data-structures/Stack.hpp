@@ -85,6 +85,10 @@ public:
     /// Remove top of the stack
     /// Time complexity: O(1)
     T pop() {
+        if (!currentTop) {
+            throw std::underflow_error("Stack already empty");
+        }
+
         T result = currentTop->value;
         Node* temp = currentTop;
         currentTop = currentTop->under;
@@ -103,6 +107,10 @@ public:
     /// Get top value
     /// Time complexity: O(1)
     T peek() const {
+        if (!currentTop) {
+            throw std::underflow_error("Stack empty");
+        }
+
         return currentTop->value;
     }
 
