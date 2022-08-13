@@ -53,7 +53,7 @@ class BinaryTree {
 
     /// Find element in subtree
     /// Time complexity: O(n)
-    Node* findInSubtree(Node* myRoot, const T& element) {
+    Node* findInSubtree(Node* myRoot, const T& element) const {
         if (!myRoot) {
             return nullptr;
         }
@@ -71,7 +71,7 @@ class BinaryTree {
 
     /// Count nodes
     /// Time complexity: O(n)
-    int count(Node* myRoot) {
+    int count(Node* myRoot) const {
         if (!myRoot) {
             return 0;
         }
@@ -115,13 +115,13 @@ public:
 
     /// Find node with specific value
     /// Time complexity: O(n)
-    Node* find(const T& element) {
+    Node* find(const T& element) const {
         return findInSubtree(root, element);
     }
 
     /// Check if tree contains an element
     /// Time complexity: O(n)
-    bool contains(const T& element) {
+    bool contains(const T& element) const {
         return findInSubtree(root, element);
     }
 
@@ -157,13 +157,13 @@ public:
 
     /// Check if the tree is empty
     /// Time complexity: O(1)
-    bool empty() {
+    bool empty() const {
         return root == nullptr;
     }
 
     /// Get the number of nodes in the tree
     /// Time complexity: O(n)
-    int size() {
+    int size() const {
         return count(root);
     };
 };
