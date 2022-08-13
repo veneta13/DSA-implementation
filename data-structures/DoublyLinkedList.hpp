@@ -173,7 +173,7 @@ public:
 
     /// Check if list contains an element
     /// Time complexity: O(n)
-    bool find(const T& element) {
+    bool find(const T& element) const {
         Node* current = first;
 
         while (current) {
@@ -188,13 +188,13 @@ public:
 
     /// Get number of elements in list
     /// Time complexity: O(1)
-    int getCount() {
+    int getCount() const {
         return count;
     }
 
     /// Check if list is empty
     /// Time complexity: O(1)
-    bool empty() {
+    bool empty() const {
         return count == 0;
     }
 
