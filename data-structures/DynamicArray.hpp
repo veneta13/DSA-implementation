@@ -150,13 +150,13 @@ public:
     }
 
     /// Add element at the back of the array
-    /// Time complexity: O(n)
+    /// Time complexity: O(n) if resizing, else O(1)
     void pushBack(const T& element) {
         insertAt(count);
     }
 
     /// Remove last element from array
-    /// Time complexity: O(n)
+    /// Time complexity: O(1)
     void popBack(const T& element) {
         removeAt(count-1);
     }
