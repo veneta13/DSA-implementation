@@ -46,20 +46,28 @@ public:
         clear();
     }
 
-    void insertAt(int pos, const T& _value) {
+    void insertAt(int pos, const T& value) {
         if (pos < 0 || pos > size) {
             throw std::runtime_error("Invalid position!");
         }
 
         // !! Edge case !!
         if (size == 0) {
-            front = new Node(_value);
+            front = new Node(value);
         }
         else {
-            Node* current = getItem(pos - 1);
-            Node* newNext = current->next;
-            current->next = new Node(_value);
-            current->next->next = newNext;
+            // !! Edge case !!
+            if (pos == 0) {
+                Node* current = new Node(value);
+                current->next = front;
+                front = current;
+            }
+            else {
+                Node* prev = getItem(pos - 1);
+                Node* current = new Node(value);
+                current->next = prev->next;
+                prev->next = current;
+            }
         }
 
         size++;

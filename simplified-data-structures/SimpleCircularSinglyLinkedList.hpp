@@ -45,7 +45,7 @@ public:
     }
 
     void insertAt(int pos, const T& value) {
-        if (pos < 0 || pos < size - 1) {
+        if (pos < 0 || pos > size) {
             throw std::runtime_error("Invalid position!");
         }
 
@@ -54,10 +54,19 @@ public:
             start->next = start;
         }
         else {
-            Node* current = getItem(pos - 1);
-            Node* nextNode = current->next;
-            current->next = new Node(value);
-            current->next->next = nextNode;
+            if (pos == 0) {
+                Node* current = new Node(value);
+                Node* last = getItem(size - 1);
+                current->next = start;
+                last->next = current;
+                start = current;
+            }
+            else {
+                Node* current = new Node(value);
+                Node* prev = getItem(pos - 1);
+                current->next = prev->next;
+                prev->next = current;
+            }
         }
 
         size++;
