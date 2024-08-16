@@ -93,12 +93,35 @@ public:
         return getItem(pos)->value;
     }
 
+    int find(const T& value) {
+        int pos = size;
+
+        Node* current = start;
+        for (int i = 0; i < size; i++) {
+            if (current->value == value) {
+                pos = i;
+                break;
+            }
+            current = current->next;
+        }
+
+        return pos == size ? -1 : pos;
+    }
+
     bool empty() {
         return size == 0;
     }
 
     int getSize() {
         return size;
+    }
+
+    void print() {
+        Node* current = start;
+        for (int i = 0; i < size; i++) {
+            std::cout << current->value << " ";
+            current = current->next;
+        }
     }
 };
 

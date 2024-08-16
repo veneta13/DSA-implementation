@@ -93,6 +93,21 @@ public:
         return getItem(pos)->value;
     }
 
+    int find(const T& value) {
+        int pos = 0;
+
+        Node* current = front;
+        while (current) {
+            if (current->value == value) {
+                break;
+            }
+            pos++;
+            current = current->next;
+        }
+
+        return pos == size ? -1 : pos;
+    }
+
     bool empty() {
         return size == 0;
     }
