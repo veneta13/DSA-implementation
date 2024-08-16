@@ -19,7 +19,7 @@ class SimpleCircularSinglyLinkedList {
 
     void clear() {
         Node* current = start;
-        while (current) {
+        for (int i = 0; i < size; i++) {
             Node* temp = current;
             current = current->next;
             delete temp;
