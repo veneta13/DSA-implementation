@@ -66,7 +66,7 @@ public:
         return occupied == 0;
     }
 
-    int size() {
+    int getSize() {
         return occupied;
     }
 };
