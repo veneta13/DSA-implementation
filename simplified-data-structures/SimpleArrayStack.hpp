@@ -55,18 +55,18 @@ public:
         return elements[occupied];
     }
 
-    T peek() {
+    T peek() const {
         if (occupied == 0) {
             throw std::runtime_error("Empty stack!");
         }
         return elements[occupied - 1];
     }
 
-    bool empty() {
+    bool empty() const {
         return occupied == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return occupied;
     }
 };

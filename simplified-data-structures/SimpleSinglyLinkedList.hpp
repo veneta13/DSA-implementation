@@ -93,7 +93,7 @@ public:
         size--;
     }
 
-    T getAt(int pos) {
+    T getAt(int pos) const {
         if (pos < 0 || pos > size - 1) {
             throw std::runtime_error("Invalid position!");
         }
@@ -101,7 +101,7 @@ public:
         return getItem(pos)->value;
     }
 
-    int find(const T& value) {
+    int find(const T& value) const {
         int pos = 0;
 
         Node* current = front;
@@ -116,15 +116,15 @@ public:
         return pos == size ? -1 : pos;
     }
 
-    bool empty() {
+    bool empty() const {
         return size == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return size;
     }
 
-    void print() {
+    void print() const {
         Node* current = front;
         while(current) {
             std::cout << current->value << " ";

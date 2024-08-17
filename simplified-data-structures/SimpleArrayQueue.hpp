@@ -66,7 +66,7 @@ public:
         return result;
     }
 
-    T head() {
+    T head() const {
         if (occupied == 0) {
             throw std::runtime_error("Empty queue!");
         }
@@ -74,11 +74,11 @@ public:
         return elements[back];
     }
 
-    bool empty() {
+    bool empty() const {
         return occupied == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return occupied;
     }
 };

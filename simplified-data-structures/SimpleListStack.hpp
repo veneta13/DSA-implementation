@@ -56,7 +56,7 @@ public:
         return result;
     }
 
-    T peek() {
+    T peek() const {
         if (!top) {
             throw std::runtime_error("Empty stack!");
         }
@@ -64,11 +64,11 @@ public:
         return top->value;
     }
 
-    bool empty() {
+    bool empty() const {
         return size == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return size;
     }
 };

@@ -62,15 +62,15 @@ public:
         return result;
     }
 
-    T head() {
+    T head() const {
         return front->value;
     }
 
-    bool empty() {
+    bool empty() const {
         return size == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return size;
     }
 };

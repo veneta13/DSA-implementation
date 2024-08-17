@@ -2,6 +2,7 @@
 #define DSA_IMPLEMENTATION_SIMPLECIRCULARSINGLYLINKEDLIST_HPP
 
 #include <stdexcept>
+#include <iostream>
 
 template<typename T>
 class SimpleCircularSinglyLinkedList {
@@ -94,7 +95,7 @@ public:
         size--;
     }
 
-    T getAt(int pos) {
+    T getAt(int pos) const {
         if (pos < 0 || pos > size - 1) {
             throw std::runtime_error("Invalid position!");
         }
@@ -102,7 +103,7 @@ public:
         return getItem(pos)->value;
     }
 
-    int find(const T& value) {
+    int find(const T& value const {
         int pos = size;
 
         Node* current = start;
@@ -117,15 +118,15 @@ public:
         return pos == size ? -1 : pos;
     }
 
-    bool empty() {
+    bool empty() const {
         return size == 0;
     }
 
-    int getSize() {
+    int getSize() const {
         return size;
     }
 
-    void print() {
+    void print() const {
         Node* current = start;
         for (int i = 0; i < size; i++) {
             std::cout << current->value << " ";
