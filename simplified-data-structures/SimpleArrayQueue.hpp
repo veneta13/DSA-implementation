@@ -81,13 +81,6 @@ public:
     int getSize() {
         return occupied;
     }
-
-    void print() {
-        for (int i = 0; i < capacity; i++) {
-            std::cout << elements[i] << " ";
-        }
-        std::cout << std::endl;
-    }
 };
 
 #endif //DSA_IMPLEMENTATION_SIMPLEARRAYQUEUE_HPP
