@@ -10,7 +10,7 @@ class SimpleArrayStack {
     int capacity = 0;
 
     void clear() {
-        delete elements;
+        delete[] elements;
         elements = nullptr;
         occupied = 0;
         capacity = 0;
@@ -24,7 +24,7 @@ class SimpleArrayStack {
             newElements[i] = elements[i];
         }
 
-        delete elements;
+        delete[] elements;
         elements = newElements;
     }
 
