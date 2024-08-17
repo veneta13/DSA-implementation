@@ -103,7 +103,7 @@ public:
         return getItem(pos)->value;
     }
 
-    int find(const T& value const {
+    int find(const T& value) const {
         int pos = size;
 
         Node* current = start;
