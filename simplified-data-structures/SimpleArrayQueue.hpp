@@ -26,11 +26,11 @@ class SimpleArrayQueue {
         T* newElements = new T[capacity];
 
         for (int i = 0; i < occupied; i++) {
-            newElements[i] = elements[(i + back) % occupied];
+            newElements[i] = elements[(i + front) % occupied];
         }
 
-        front = occupied;
-        back = 0;
+        front = 0;
+        back = occupied;
 
         delete[] elements;
         elements = newElements;
@@ -50,8 +50,8 @@ public:
             doubleCapacity();
         }
 
-        elements[front] = value;
-        front = (front + 1) % capacity;
+        elements[back] = value;
+        back = (back + 1) % capacity;
         occupied++;
     }
 
@@ -60,8 +60,8 @@ public:
             throw std::runtime_error("Empty queue!");
         }
 
-        T result = elements[back];
-        back = (back + 1) % capacity;
+        T result = elements[front];
+        front = (front + 1) % capacity;
         occupied--;
         return result;
     }
@@ -71,7 +71,7 @@ public:
             throw std::runtime_error("Empty queue!");
         }
 
-        return elements[front];
+        return elements[back];
     }
 
     bool empty() {
